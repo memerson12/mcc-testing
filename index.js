@@ -41,19 +41,4 @@ creators.forEach((creatorDoc) => {
 
 console.log(data)
 
-let sampleOutput = {
-    event: 'mcc20',
-    teams: {
-        "Red Rabbits": ["BadBoyHalo", "Dream", "GeorgeNotFound", "Sapnap"],
-    },
-    twitchUsers: [
-        "BadBoyHalo",
-        "GeorgeNotFound",
-        "Sapnap",
-    ],
-    youtubeUsers: {
-        "Dream": ["UCTkXRDQl0luXxVQrRQvWS6w", 0]
-    }
-}
-
 // main-1b25edc7.9952c7b5.js
