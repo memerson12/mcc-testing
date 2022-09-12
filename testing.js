@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import {collection, getDocs, getFirestore} from "firebase/firestore";
+import {collection, doc, getDoc, getDocs, getFirestore} from "firebase/firestore";
 
 const firebaseConfig = { // Production Credentials
     apiKey: "AIzaSyBJoHjVU-L0FiafX_qOtmeG368QXw22lNw",
@@ -48,6 +48,9 @@ const querySnapshot4 = await getDocs(collection(db, "teams"));
 querySnapshot4.forEach((doc) => {
     console.log(`${doc.id} => ${Object.keys(doc.data())}`);
 });
+
+const staticInfo = (await getDoc(doc(db, "config", "static"))).data();
+console.log(staticInfo['language'])
 
 /**
  *  Sample Output:

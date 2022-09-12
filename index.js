@@ -12,65 +12,11 @@ const firebaseConfig = {
     measurementId: "G-FYG6WJKFPT"
 }
 
-const allTeamNames = {
-    "defaultTeamNames": {
-        "AQUA": "Aqua Axolotls",
-        "BLUE": "Blue Bats",
-        "CYAN": "Cyan Coyotes",
-        "GREEN": "Green Geckos",
-        "LIME": "Lime Llamas",
-        "ORANGE": "Orange Ocelots",
-        "PINK": "Pink Parrots",
-        "PURPLE": "Purple Pandas",
-        "RED": "Red Rabbits",
-        "SPECTATORS": "Spectators",
-        "YELLOW": "Yellow Yaks"
-    },
-    "winterTeamNames": {
-        "AQUA": "Cerulean Candy Canes",
-        "BLUE": "Sapphire Santas",
-        "CYAN": "Teal Turkeys",
-        "GREEN": "Emerald Elves",
-        "LIME": "Mint Mistletoes",
-        "ORANGE": "Ginger Breadmen",
-        "PINK": "Pink Presents",
-        "PURPLE": "Purple Penguins",
-        "RED": "Red Reindeer",
-        "SPECTATORS": "Spectators",
-        "YELLOW": "Yellow Yetis"
-    },
-    "krimsonTeamNames": {
-        "AQUA": "Aqua Axolotls",
-        "BLUE": "Blue Bats",
-        "CYAN": "Cyan Coyotes",
-        "GREEN": "Green Geckos",
-        "LIME": "Lime Llamas",
-        "ORANGE": "Orange Ocelots",
-        "PINK": "Pink Parrots",
-        "PURPLE": "Purple Pandas",
-        "RED": "Krimson Krakens",
-        "SPECTATORS": "Spectators",
-        "YELLOW": "Yellow Yaks"
-    },
-    "halloweenTeamNames": {
-        "AQUA": "Aqua Abominations",
-        "BLUE": "Blue Banshees",
-        "CYAN": "Cyan Centipedes",
-        "GREEN": "Green Goblins",
-        "LIME": "Lime Liches",
-        "ORANGE": "Orange Oozes",
-        "PINK": "Fuchsia Frankensteins",
-        "PURPLE": "Violet Vampires",
-        "RED": "Red Ravens",
-        "SPECTATORS": "Spooktators",
-        "YELLOW": "Mustard Mummies"
-    }
-}
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const eventInfo = (await getDoc(doc(db, "config", "event-info"))).data();
+const allTeamNames = JSON.parse((await getDoc(doc(db, "config", "static"))).data()['language']);
 const teamNames = allTeamNames[eventInfo['teamNameKey']];
 const data = {
     event: `mcc${eventInfo['episode']}`,
