@@ -1,9 +1,10 @@
-# MCC Data Fetcher
+# MC Championship Firestore Database Exploration
 
-You will find the code to that actual does all of the work in the `index.js`. If you are curious about all the data I
-have found so far in the MCC firebase database you can look in the `testing.js` file.
-
-Here is a sample out put of the `index.js`:
+In looking through the [mcc.live](https://mcc.live) site, I discovered that the Noxcrew were using a Firebase Firestore 
+database to handle the event data. To find all the data I have been able to find in the database take a look at the 
+`testing.js` file. In the `index.js` file, I have put together a small script to gather the data used by 
+[fishfei137](https://github.com/fishfei137/MCC-Viewership) in their MCC stats. An example output of this file can be seen
+below.
 
 ```json
 {
