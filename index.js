@@ -39,6 +39,6 @@ creators.forEach((creatorDoc) => {
     }
 })
 
-console.log(data)
+return data
 
 // main-1b25edc7.9952c7b5.js
